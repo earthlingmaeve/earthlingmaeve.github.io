@@ -1,0 +1,331 @@
+---
+const projects = [
+  {
+    title: "Active Directory IAM Lab",
+    description:
+      "A fictional enterprise environment built to practice users, groups, OUs, Group Policy, permissions, and identity lifecycle management.",
+    status: "In progress",
+  },
+  {
+    title: "Identity Automation",
+    description:
+      "PowerShell automation for provisioning, modifying, disabling, and auditing identity accounts.",
+    status: "Planned",
+  },
+  {
+    title: "Hybrid Identity Lab",
+    description:
+      "A future hybrid environment connecting on-premises Active Directory with Microsoft Entra ID.",
+    status: "Planned",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Earthlingmaeve — IAM, cloud, automation, and homelab projects." />
+    <title>Earthlingmaeve | IAM & Cloud Homelab</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="logo">earthlingmaeve</a>
+
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#blog">Blog</a>
+          <a href="#about">About</a>
+          <a href="https://github.com/earthlingmaeve">GitHub</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">HELPDESK → IAM / CLOUD</p>
+
+        <h1>Building my way into identity and cloud engineering.</h1>
+
+        <p class="intro">
+          I'm learning by building. This site documents my homelab,
+          identity projects, automation experiments, and the things I
+          break along the way.
+        </p>
+
+        <div class="actions">
+          <a href="#projects" class="button">View projects</a>
+          <a href="https://github.com/earthlingmaeve" class="button secondary">
+            GitHub
+          </a>
+        </div>
+      </section>
+
+      <section id="projects">
+        <p class="eyebrow">PROJECTS</p>
+        <h2>Things I'm building</h2>
+
+        <div class="project-grid">
+          {
+            projects.map((project) => (
+              <article class="project">
+                <span class="status">{project.status}</span>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="blog">
+        <p class="eyebrow">BLOG</p>
+        <h2>Learning in public</h2>
+
+        <p>
+          I'll use this space to document homelab builds, IAM concepts,
+          troubleshooting, PowerShell automation, and cloud experiments.
+        </p>
+
+        <p>
+          <strong>First posts coming soon.</strong>
+        </p>
+      </section>
+
+      <section id="about">
+        <p class="eyebrow">ABOUT</p>
+        <h2>Why this exists</h2>
+
+        <p>
+          I'm building practical experience in identity and cloud
+          engineering through a hands-on homelab. Rather than collecting
+          tutorials, I'm trying to build systems, troubleshoot them,
+          document what I learn, and turn the results into portfolio
+          projects.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built with Astro · Documented on GitHub</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    line-height: 1.6;
+    color: #172033;
+    background: #f7f8fa;
+  }
+
+  :global(a) {
+    color: inherit;
+  }
+
+  header {
+    border-bottom: 1px solid #e2e5ea;
+    background: rgba(247, 248, 250, 0.95);
+  }
+
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logo {
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  section {
+    padding: 6rem 0;
+    border-bottom: 1px solid #e2e5ea;
+  }
+
+  .hero {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #596579;
+  }
+
+  h1 {
+    max-width: 800px;
+    margin: 0;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .intro {
+    max-width: 650px;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+    color: #596579;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.75rem 1.2rem;
+    border: 1px solid #172033;
+    border-radius: 6px;
+    background: #172033;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .button.secondary {
+    background: transparent;
+    color: #172033;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .project {
+    padding: 1.5rem;
+    border: 1px solid #dfe3e8;
+    border-radius: 8px;
+    background: white;
+  }
+
+  .project p {
+    color: #596579;
+  }
+
+  .status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #596579;
+  }
+
+  #blog p,
+  #about p {
+    max-width: 700px;
+    color: #596579;
+  }
+
+  footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    color: #596579;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 800px) {
+    .nav-links {
+      gap: 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+  }
+
+  @media (max-width: 500px) {
+    nav {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .nav-links {
+      flex-wrap: wrap;
+    }
+  }
+</style>---
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+	</body>
+</html>
