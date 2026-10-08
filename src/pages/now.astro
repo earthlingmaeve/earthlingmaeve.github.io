@@ -1,0 +1,206 @@
+---
+const title = "Now";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="What earthlingmaeve is currently learning and building."
+    />
+    <title>{title} | earthlingmaeve</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="logo">earthlingmaeve</a>
+
+        <div class="nav-links">
+          <a href="/#projects">Projects</a>
+          <a href="/#blog">Blog</a>
+          <a href="/now">Now</a>
+          <a href="/#about">About</a>
+          <a href="https://github.com/earthlingmaeve">GitHub</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <p class="eyebrow">NOW</p>
+
+      <h1>What I'm working on</h1>
+
+      <p class="intro">
+        A snapshot of what I'm currently learning, building, and
+        experimenting with.
+      </p>
+
+      <section>
+        <h2>Building</h2>
+
+        <ul>
+          <li>
+            <strong>Active Directory IAM Lab</strong> — building an
+            enterprise-style identity environment from the ground up.
+          </li>
+          <li>
+            <strong>Portfolio</strong> — documenting the work with Astro,
+            GitHub, and GitHub Pages.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Learning</h2>
+
+        <ul>
+          <li>Active Directory and Windows identity</li>
+          <li>Group Policy and access control</li>
+          <li>PowerShell automation</li>
+          <li>IAM lifecycle management</li>
+          <li>Microsoft Entra ID</li>
+          <li>Cloud identity and Azure RBAC</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Next up</h2>
+
+        <p>
+          Build the fictional organization for the AD lab, design the
+          organizational-unit structure, create role-based groups, and
+          start documenting the identity model.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why a Now page?</h2>
+
+        <p>
+          This page is intentionally more temporary than the rest of the
+          site. Projects describe what I've built; this page describes
+          what I'm focused on right now.
+        </p>
+
+        <p>
+          I'll update it as the focus of the homelab changes.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built with Astro · Documented on GitHub</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(body) {
+    margin: 0;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    line-height: 1.7;
+    color: #172033;
+    background: #f7f8fa;
+  }
+
+  :global(a) {
+    color: inherit;
+  }
+
+  header {
+    border-bottom: 1px solid #e2e5ea;
+  }
+
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logo {
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+  }
+
+  main {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #596579;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 2rem;
+  }
+
+  .intro {
+    max-width: 700px;
+    margin: 1.5rem 0 0;
+    font-size: 1.25rem;
+    color: #596579;
+  }
+
+  section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid #e2e5ea;
+  }
+
+  li {
+    margin: 0.6rem 0;
+  }
+
+  footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    color: #596579;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
